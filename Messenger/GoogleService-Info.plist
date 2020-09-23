@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>737268565568-97c606povf81464pu2d51nf4vupstom7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.737268565568-97c606povf81464pu2d51nf4vupstom7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC9Q3WPuiIb3mKPvE-rTf3Tw4bnRbus2Pc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>737268565568</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dennisthegenius.Messenger</string>
+	<key>PROJECT_ID</key>
+	<string>swiftmessenger-6481f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiftmessenger-6481f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:737268565568:ios:d6020c0ca8eb2b32c041a5</string>
+	<key>DATABASE_URL</key>
+	<string>https://swiftmessenger-6481f.firebaseio.com</string>
+</dict>
+</plist>
