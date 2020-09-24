@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C28790B251C3EDE00D4E538 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C28790A251C3EDE00D4E538 /* ChatViewController.swift */; };
+		0C28790D251C65DC00D4E538 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C28790C251C65DC00D4E538 /* StorageManager.swift */; };
 		0C2CB1352518235C00C41DD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C2CB1342518235C00C41DD2 /* GoogleService-Info.plist */; };
 		0C5CAF7A25147D1700244105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5CAF7925147D1700244105 /* AppDelegate.swift */; };
 		0C5CAF7C25147D1700244105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5CAF7B25147D1700244105 /* SceneDelegate.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C28790A251C3EDE00D4E538 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0C28790C251C65DC00D4E538 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0C2CB1342518235C00C41DD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C5CAF7625147D1700244105 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C5CAF7925147D1700244105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				0C5CAF992514801300244105 /* VideoPlayerViewController.swift */,
 				0C5CAF9B2514803C00244105 /* NewConversationViewController.swift */,
 				0C5CAF9D2514805200244105 /* ProfileViewController.swift */,
+				0C28790A251C3EDE00D4E538 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				0C5CAF7B25147D1700244105 /* SceneDelegate.swift */,
 				0C5CAFA02514922600244105 /* Extensions.swift */,
 				0CD61F25251A2EE7007BD789 /* DatabaseManager.swift */,
+				0C28790C251C65DC00D4E538 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				0C5CAF7325147D1700244105 /* Frameworks */,
 				0C5CAF7425147D1700244105 /* Resources */,
 				452FAA760EB1166441E11470 /* [CP] Embed Pods Frameworks */,
+				D57F099EAD5A6438F0E9D75C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +268,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Messenger/Pods-Messenger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D57F099EAD5A6438F0E9D75C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Messenger/Pods-Messenger-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Messenger/Pods-Messenger-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Messenger/Pods-Messenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E53796CE512890A368472664 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,7 +324,9 @@
 				0C5CAF7A25147D1700244105 /* AppDelegate.swift in Sources */,
 				0C5CAF9E2514805200244105 /* ProfileViewController.swift in Sources */,
 				0C5CAF7C25147D1700244105 /* SceneDelegate.swift in Sources */,
+				0C28790B251C3EDE00D4E538 /* ChatViewController.swift in Sources */,
 				0C5CAF982514800700244105 /* PhotoViewerViewController.swift in Sources */,
+				0C28790D251C65DC00D4E538 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

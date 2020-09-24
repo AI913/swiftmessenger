@@ -8,8 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
+    private let spinner = JGProgressHUD(style: .dark)
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.clipsToBounds = true
@@ -162,17 +165,23 @@ class RegisterViewController: UIViewController {
                 return
         }
         
+        spinner.show(in: view)
+        
+        // Firebase log in
+        
         DatabaseManager.shared.userExists(with: email, completion:{[weak self]exists in
             guard let strongSelf = self else {
                 return
             }
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+            
             guard !exists else {
                 // user already exists
                 strongSelf.alertUserLoginError(message: "Looks like a user account for that email address already exists.")
                 return
             }
-        }
-        )
         
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
             
@@ -181,11 +190,30 @@ class RegisterViewController: UIViewController {
                 return
             }
             
-            DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+            let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+            DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                if success {
+                    // upload image
+                    guard let image = strongSelf.imageView.image, let data = image.pngData() else {
+                        return
+                    }
+                    let fileName = chatUser.profilePictureFileName
+                    StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
+                        switch result {
+                        case .success(let downloadUrl) :
+                            UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                            print(downloadUrl)
+                        case .failure(let error):
+                            print("Storage manager error: \(error)")
+                        }
+                    })
+                }
+            })
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
 
         })
-    }
+    })
+}
     
     func alertUserLoginError(message: String = "Please enter all information to create an account.") {
         let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .alert)
